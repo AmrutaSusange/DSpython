@@ -31,24 +31,30 @@ class abc:
 if __name__ == "__main__":
 
     with open('para3.txt') as f:
-        word = f.read()
-
+        paragraph = f.read()
 
     import re
     import string
 
+    clean_paragraph = re.sub(f'[{re.escape(string.punctuation)}]', '', paragraph)
+    paragraph = re.sub('\s{2,}', ' ', clean_paragraph).strip()
 
-    word = re.sub(f"[{re.escape(string.punctuation)}]", " ", word)
+    text = "8343"
 
-    l = re.sub("\s{2,}", " ", word).strip().split(' ')
-    d = {k:v for k,v in enumerate(l)}
-    print(d)
+    cond1 = text.isdigit()
+    cond2 = text.isalpha()
 
-    print(string.punctuation)
 
-    # for i,j in enumerate(iterable):
-    #     text_dict[i] = [j]
-    # print(text_dict)
+    print(all([cond1, cond2]))
+
+    class a:
+        def __int__(self):
+            print('dsfds')
+
+    xx = a()
+
+    print(isinstance("dsfsdf", xx))
+
 
 
 
