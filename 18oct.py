@@ -63,15 +63,12 @@ if __name__ == '__main__':
 
     print(w1.num_of_executors)
 
-    # w1.delete_executor(id)
+    w1.delete_executor("32423443")
 
     w2 = worker(4,6,5)
 
-    print(w1 + w2)
+    print((w1+w2).num_of_executors)
 
-    l = [1,3,343]
-
-    del l[3]
 
 
 
